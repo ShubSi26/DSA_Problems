@@ -15,7 +15,7 @@ void ias(){
         front = t;
     }
 }
-void iae(){
+void iae(){ 
     node *t = new node();
     cout << "ENter the value: " ;
     cin >> t->n;
