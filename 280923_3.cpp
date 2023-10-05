@@ -6,7 +6,7 @@ struct node{
 }*front,*rear;
 void ias(){
     node *t = new node();
-    cout << "ENter the value: " ;
+    cout << "Enter the value: " ;
     cin >> t->n;
     if(rear == NULL){
         front = rear =t;
@@ -17,7 +17,7 @@ void ias(){
 }
 void iae(){ 
     node *t = new node();
-    cout << "ENter the value: " ;
+    cout << "Enter the value: " ;
     cin >> t->n;
     if(rear == NULL){
         front = rear =t;
@@ -42,17 +42,17 @@ void dfe(){
         return;
     }
     node *t = front;
-    node *pre;
-    while(t != NULL){
-        pre = t;
+    while(t->next != NULL && t->next->next != NULL){
         t=t->next;
     }
-    if(pre == front){
+    if(t == front && t->next == NULL){
         front =NULL;
         rear = NULL;
     }
-    rear = pre;
-    pre->next = NULL;
+    else{
+        t->next = NULL;
+        rear = t;
+    }
 
 }
 void dsp(){
